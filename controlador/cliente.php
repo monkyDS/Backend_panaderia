@@ -12,7 +12,15 @@
     switch ($control) {
         case 'consulta':
             $vec = $cliente->consulta();
-            break;            
+            break;
+            case 'filtro':
+                $dato = $_GET['dato'];
+                $vec = $cliente->filtro($dato);
+            break;
+            case 'ccliente':
+                $dato = $_GET['dato'];
+                $vec = $cliente->consultar_cliente($dato);
+            break;     
     }
 
     $datosj = json_encode($vec);
